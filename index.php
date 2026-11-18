@@ -23,7 +23,7 @@ $iniciales = 'OL';
   <meta name="description" content="Blog personal de <?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?>, estudiante de <?= htmlspecialchars($carrera, ENT_QUOTES, 'UTF-8') ?> en la <?= htmlspecialchars($universidad, ENT_QUOTES, 'UTF-8') ?>, desde <?= htmlspecialchars($ciudad, ENT_QUOTES, 'UTF-8') ?>.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -55,52 +55,52 @@ $iniciales = 'OL';
       </div>
     </section>
 
-    <svg class="wave-divider" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
-      <path fill="currentColor" d="M0,32 C240,64 480,0 720,24 C960,48 1200,64 1440,24 L1440,64 L0,64 Z"></path>
-    </svg>
+    <section class="about" id="sobre-mi">
+      <div class="section">
+        <p class="section-label reveal">Sobre mí</p>
+        <h2 class="reveal">De Chimbote para el mundo digital</h2>
+        <p class="lead reveal">
+          Tengo <?= (int) $edad ?> años y vivo en <?= htmlspecialchars($ciudad, ENT_QUOTES, 'UTF-8') ?>.
+          Este espacio reúne lo que estudio, lo que disfruto y un poco de quién soy.
+        </p>
 
-    <section class="section" id="sobre-mi">
-      <p class="section-label reveal">Sobre mí</p>
-      <h2 class="reveal">De Chimbote para el mundo digital</h2>
-      <p class="lead reveal">
-        Tengo <?= (int) $edad ?> años y vivo en <?= htmlspecialchars($ciudad, ENT_QUOTES, 'UTF-8') ?>.
-        Este espacio reúne lo que estudio, lo que disfruto y un poco de quién soy.
-      </p>
-
-      <div class="about-grid">
-        <div class="portrait reveal" aria-label="Foto de perfil">
+        <div class="about-grid">
+          <div class="portrait-frame reveal">
+            <div class="portrait" aria-label="Foto de perfil">
 <?php if ($foto !== null): ?>
-          <img src="<?= htmlspecialchars($foto, ENT_QUOTES, 'UTF-8') ?>" alt="Retrato de <?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?>" width="640" height="800">
+              <img src="<?= htmlspecialchars($foto, ENT_QUOTES, 'UTF-8') ?>" alt="Retrato de <?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?>" width="640" height="800">
 <?php else: ?>
-          <div class="portrait-fallback" role="img" aria-label="Iniciales de <?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?>">
-            <span><?= htmlspecialchars($iniciales, ENT_QUOTES, 'UTF-8') ?></span>
-          </div>
+              <div class="portrait-fallback" role="img" aria-label="Iniciales de <?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?>">
+                <span><?= htmlspecialchars($iniciales, ENT_QUOTES, 'UTF-8') ?></span>
+              </div>
 <?php endif; ?>
-        </div>
+            </div>
+          </div>
 
-        <div class="reveal">
-          <p class="lead" style="margin:0">
-            Me formo entre algoritmos, redes y sistemas, sin perder de vista el sabor del mar
-            ni el silencio de un buen tablero.
-          </p>
-          <dl class="facts">
-            <div class="fact">
-              <dt>Nombre</dt>
-              <dd><?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?></dd>
-            </div>
-            <div class="fact">
-              <dt>Edad</dt>
-              <dd><?= (int) $edad ?> años</dd>
-            </div>
-            <div class="fact">
-              <dt>Ciudad</dt>
-              <dd><?= htmlspecialchars($ciudad, ENT_QUOTES, 'UTF-8') ?></dd>
-            </div>
-            <div class="fact">
-              <dt>Universidad</dt>
-              <dd><?= htmlspecialchars($universidad, ENT_QUOTES, 'UTF-8') ?></dd>
-            </div>
-          </dl>
+          <div class="about-copy reveal">
+            <p class="intro">
+              Me formo entre algoritmos, redes y sistemas, sin perder de vista el sabor del mar
+              ni el silencio de un buen tablero.
+            </p>
+            <dl class="facts">
+              <div class="fact">
+                <dt>Nombre</dt>
+                <dd><?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?></dd>
+              </div>
+              <div class="fact">
+                <dt>Edad</dt>
+                <dd><?= (int) $edad ?> años</dd>
+              </div>
+              <div class="fact">
+                <dt>Ciudad</dt>
+                <dd><?= htmlspecialchars($ciudad, ENT_QUOTES, 'UTF-8') ?></dd>
+              </div>
+              <div class="fact">
+                <dt>Universidad</dt>
+                <dd><?= htmlspecialchars($universidad, ENT_QUOTES, 'UTF-8') ?></dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </div>
     </section>
@@ -112,7 +112,7 @@ $iniciales = 'OL';
         <p class="lead reveal">
           Estudio para construir soluciones tecnológicas con criterio, lógica y mucha curiosidad.
         </p>
-        <div class="study-panel reveal">
+        <div class="study-block reveal">
           <strong><?= htmlspecialchars($carrera, ENT_QUOTES, 'UTF-8') ?></strong>
           <p>
             Carrera universitaria en la <?= htmlspecialchars($universidad, ENT_QUOTES, 'UTF-8') ?> (UNS).
@@ -123,33 +123,43 @@ $iniciales = 'OL';
       </div>
     </section>
 
-    <section class="section" id="pasiones">
-      <p class="section-label reveal">Pasiones</p>
-      <h2 class="reveal">Lo que me hace feliz</h2>
-      <p class="lead reveal">
-        Fuera del aula, mi día se siente completo con buen cebiche y una partida de ajedrez.
-      </p>
+    <section class="passions-wrap" id="pasiones">
+      <div class="section">
+        <p class="section-label reveal">Pasiones</p>
+        <h2 class="reveal">Lo que me hace feliz</h2>
+        <p class="lead reveal">
+          Fuera del aula, mi día se siente completo con buen cebiche y una partida de ajedrez.
+        </p>
 
-      <div class="passions">
-        <article class="passion passion-cebiche reveal">
-          <svg class="passion-icon" viewBox="0 0 48 48" aria-hidden="true">
-            <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"></circle>
-            <path d="M14 28c4-8 16-8 20 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-            <circle cx="20" cy="20" r="2" fill="currentColor"></circle>
-            <circle cx="28" cy="18" r="2" fill="currentColor"></circle>
-          </svg>
-          <h3><?= htmlspecialchars($platillo, ENT_QUOTES, 'UTF-8') ?></h3>
-          <p>Mi platillo favorito: fresco, ácido y con el sabor del mar de mi ciudad.</p>
-        </article>
+        <div class="passion-list">
+          <article class="passion-row passion-cebiche reveal">
+            <div class="passion-mark" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="2.5"></circle>
+                <path d="M14 28c4-8 16-8 20 0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+                <circle cx="20" cy="20" r="2.2" fill="currentColor"></circle>
+                <circle cx="28" cy="18" r="2.2" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <div>
+              <h3><?= htmlspecialchars($platillo, ENT_QUOTES, 'UTF-8') ?></h3>
+              <p>Mi platillo favorito: fresco, ácido y con el sabor del mar de mi ciudad.</p>
+            </div>
+          </article>
 
-        <article class="passion passion-ajedrez reveal">
-          <svg class="passion-icon" viewBox="0 0 48 48" aria-hidden="true">
-            <path d="M18 38h12M20 38l2-10h4l2 10M22 28h4c2 0 3-2 2-4l-1-2h-6l-1 2c-1 2 0 4 2 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
-            <circle cx="24" cy="16" r="3" fill="currentColor"></circle>
-          </svg>
-          <h3><?= htmlspecialchars($hobby, ENT_QUOTES, 'UTF-8') ?></h3>
-          <p>Me gusta jugar ajedrez: estrategia, paciencia y cada jugada cuenta.</p>
-        </article>
+          <article class="passion-row passion-ajedrez reveal">
+            <div class="passion-mark" aria-hidden="true">
+              <svg viewBox="0 0 48 48">
+                <path d="M18 38h12M20 38l2-10h4l2 10M22 28h4c2 0 3-2 2-4l-1-2h-6l-1 2c-1 2 0 4 2 4z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"></path>
+                <circle cx="24" cy="16" r="3.2" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <div>
+              <h3><?= htmlspecialchars($hobby, ENT_QUOTES, 'UTF-8') ?></h3>
+              <p>Me gusta jugar ajedrez: estrategia, paciencia y cada jugada cuenta.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -173,7 +183,7 @@ $iniciales = 'OL';
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.16 });
+    }, { threshold: 0.14 });
 
     reveals.forEach((el) => observer.observe(el));
   </script>
